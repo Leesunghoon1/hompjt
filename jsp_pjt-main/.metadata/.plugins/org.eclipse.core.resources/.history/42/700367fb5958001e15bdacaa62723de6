@@ -1,0 +1,10 @@
+package dao;
+
+import domain.BoardVO;
+
+public interface BoardDAO {
+
+	int insert(BoardVO bvo);
+	//전달 받고 다오임플에 전달
+
+}

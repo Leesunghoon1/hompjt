@@ -1,0 +1,7 @@
+package domain;
+
+import domain.BoardVO;
+
+public interface BoardVO {
+	int insert(BoardVO bvo);
+}

@@ -1,0 +1,21 @@
+create table board(
+cno int auto_increment,
+bno int not null,
+wrtier varchar(200) not null default "unknown",
+content varchar(1000), 
+regdate datetime default now(),
+primary key(cno));
+
+
+
+create table member(
+id varchar(100),
+pwd varchar(100) not null,
+email varchar(100) not null,
+pnum int default 0,
+age int default 0,
+regdate datetime default now(),
+lastlogin datetime default now(),
+primary key(id));
+
+

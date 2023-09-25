@@ -1,0 +1,5 @@
+package BoardService;
+
+public interface BoardService {
+
+}

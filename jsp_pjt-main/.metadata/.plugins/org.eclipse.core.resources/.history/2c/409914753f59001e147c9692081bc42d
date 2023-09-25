@@ -1,0 +1,21 @@
+package dao;
+
+import java.util.List;
+
+import domain.BoardVO;
+
+public interface BoardDAO {
+
+	int insert(BoardVO bvo);
+	//전달 받고 다오임플에 전달
+
+	List<BoardVO> selectList();
+	//전달 받고 다오임플에 전달
+
+	BoardVO selectOne(int bno);
+
+	int update(BoardVO bvo);
+
+	int remove(int bno);
+
+}

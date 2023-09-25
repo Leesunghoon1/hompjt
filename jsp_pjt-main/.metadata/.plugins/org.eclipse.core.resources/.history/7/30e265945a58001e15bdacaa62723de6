@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Board List Page</h1>
+<tr>
+	<th>BNO</th>
+	<th>TITLE</th>
+	<th>WRWITER</th>
+	<th>REG_DATE</th>
+</tr>
+ <a href="/index.jsp">홈페이지 첫이동</a>
+   <a href="/brd/register"></a>
+</body>
+</html>

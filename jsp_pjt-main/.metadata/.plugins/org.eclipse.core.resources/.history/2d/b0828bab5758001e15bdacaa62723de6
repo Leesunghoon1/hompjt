@@ -1,0 +1,38 @@
+package dao;
+
+import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import domain.BoardVO;
+import orm.DatabaseBuilder;
+
+public class BoardDAOImpl implements BoardDAO {
+	
+	private static final Logger log = LoggerFactory.getLogger(BoardDAOImpl.class);
+	   
+	private SqlSession sql;
+	//sql, DB 연결
+	 
+	private final String NS = "BoardMapper.";
+	 // NS = NameSpace.id 인식
+	   public BoardDAOImpl() {
+		   
+		   new DatabaseBuilder();
+		   //데이터베이스 연결
+		   sql = DatabaseBuilder.getFactory().openSession(); 
+		   //세션파트(페이지 이동해도 정보 연결해주게) 열어주는 방법
+	   }
+	@Override
+	public int insert(BoardVO bvo) {
+		log.info("인서트 다오 들어왔냐 3번 체크");
+		int isOK = sql.insert(NS + "add", bvo);
+		// 메퍼에 "add"랑 bvo 전달
+		if(isOK > 0) {
+		// Query OK, 0 rows affected (0.01 sec cmd 에서 0이랑 1 비교해서 전달
+			sql.commit();
+		}
+		return isOK;
+	}
+
+}

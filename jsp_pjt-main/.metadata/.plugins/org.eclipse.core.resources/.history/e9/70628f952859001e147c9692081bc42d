@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="MemberMapper">
+  <insert id="add" parameterType="mvo">
+  insert into member (id, pwd, email, pnum, age)
+  values(#{id}, #{pwd}, #{email}, #{pnum}, #{age})
+  </insert>
+  
+  <select id="login" parameterType="mvo" resultType="mvo">
+  select * from member where id = #{id} and pwd = #{pwd}
+  </select>
+  
+  <update id="logout" parameterType="String">
+    update member set lastlogin = now() where id = #{id}
+  </update>
+  
+  <select id="list" resultType="mvo">
+  	select * from member
+  </select>
+  
+  <select id="update" parameterType="mvo">
+  <!-- parameterType="mvo" 이걸 받아야 mvo 객체를 쓸수있음 -->
+  <!-- resultType="mvo" 이걸 보내야 서버에서 쓸수있음   -->
+  update member set pwd=#{pwd}, email=#{email}, pnum=#{pnum} where id=#{id}
+  
+  </select>
+  
+  
+  
+  </mapper>
